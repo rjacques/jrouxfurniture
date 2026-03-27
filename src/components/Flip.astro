@@ -1,0 +1,77 @@
+---
+// FlipCard.astro
+const {
+  frontTitle = "Front",
+  frontText = "This is the front of the card.",
+  backTitle = "Back",
+  backText = "This is the back of the card.",
+} = Astro.props;
+---
+
+<div class="flip-card w-full max-w-xs sm:max-w-sm md:max-w-md h-56 sm:h-64 [perspective:1000px]">
+  <button
+    type="button"
+    class="flip-trigger relative h-full w-full text-left rounded-2xl focus:outline-none focus:ring-2 focus:ring-primary"
+    aria-label="Flip card"
+    aria-pressed="false"
+  >
+    <div class="flip-inner relative h-full w-full duration-500 [transform-style:preserve-3d]">
+      
+      <!-- Front -->
+      <div class="card shadow-sm absolute inset-0 rounded-2xl [backface-visibility:hidden] overflow-hidden">
+        <div class="card-body items-center justify-center text-center relative">
+          <div class="absolute top-4 right-4 opacity-60">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 5V2L8 6l4 4V7c3.31 0 6 2.69 6 6 0 1.01-.25 1.96-.69 2.8l1.46 1.46A7.93 7.93 0 0 0 20 13c0-4.42-3.58-8-8-8zm-6.77.74A7.93 7.93 0 0 0 4 11c0 4.42 3.58 8 8 8v3l4-4-4-4v3c-3.31 0-6-2.69-6-6 0-1.01.25-1.96.69-2.8L5.23 5.74z"/>
+            </svg>
+          </div>
+
+          <h2 class="card-title text-lg sm:text-xl">{frontTitle}</h2>
+          <p class="text-sm sm:text-base text-base-content/80">{frontText}</p>
+          <p class="text-xs opacity-50 mt-2">Tap to flip</p>
+        </div>
+      </div>
+
+      <!-- Back -->
+      <div class="card shadow-sm absolute inset-0 rounded-2xl [transform:rotateY(180deg)] [backface-visibility:hidden] overflow-hidden">
+        <div class="card-body items-center justify-center text-center relative">
+          <div class="absolute top-4 right-4 opacity-70">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 5V2L8 6l4 4V7c3.31 0 6 2.69 6 6 0 1.01-.25 1.96-.69 2.8l1.46 1.46A7.93 7.93 0 0 0 20 13c0-4.42-3.58-8-8-8zm-6.77.74A7.93 7.93 0 0 0 4 11c0 4.42 3.58 8 8 8v3l4-4-4-4v3c-3.31 0-6-2.69-6-6 0-1.01.25-1.96.69-2.8L5.23 5.74z"/>
+            </svg>
+          </div>
+
+          <h2 class="card-title text-lg sm:text-xl">{backTitle}</h2>
+          <p class="text-sm sm:text-base opacity-90">{backText}</p>
+          <p class="text-xs opacity-70 mt-2">Tap to flip back</p>
+        </div>
+      </div>
+
+    </div>
+  </button>
+</div>
+
+<style>
+  .flip-card.is-flipped .flip-inner {
+    transform: rotateY(180deg);
+  }
+
+ .flip-card .focus\:ring-primary {
+    &:focus {
+        --tw-ring-color: none;;
+    }
+}
+</style>
+
+<script>
+  document.querySelectorAll(".flip-trigger").forEach((button) => {
+    if (button.dataset.flipBound === "true") return;
+    button.dataset.flipBound = "true";
+
+    button.addEventListener("click", () => {
+      const card = button.closest(".flip-card");
+      const flipped = card?.classList.toggle("is-flipped");
+      button.setAttribute("aria-pressed", flipped ? "true" : "false");
+    });
+  });
+</script>
