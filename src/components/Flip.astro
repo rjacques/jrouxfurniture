@@ -8,7 +8,7 @@ const {
 } = Astro.props;
 ---
 
-<div class="flip-card w-full max-w-xs sm:max-w-sm md:max-w-md h-56 sm:h-64 [perspective:1000px]">
+<div class="flip-card w-full min-h-60 [perspective:1000px]">
   <button
     type="button"
     class="flip-trigger relative h-full w-full text-left rounded-2xl focus:outline-none focus:ring-2 focus:ring-primary"
@@ -18,7 +18,7 @@ const {
     <div class="flip-inner relative h-full w-full duration-500 [transform-style:preserve-3d]">
       
       <!-- Front -->
-      <div class="card shadow-sm absolute inset-0 rounded-2xl [backface-visibility:hidden] overflow-hidden">
+      <div class="card shadow-xl absolute inset-0 rounded-2xl [backface-visibility:hidden] overflow-hidden border-3 border-gray-400 bg-white">
         <div class="card-body items-center justify-center text-center relative">
           <div class="absolute top-4 right-4 opacity-60">
             <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
@@ -33,7 +33,7 @@ const {
       </div>
 
       <!-- Back -->
-      <div class="card shadow-sm absolute inset-0 rounded-2xl [transform:rotateY(180deg)] [backface-visibility:hidden] overflow-hidden">
+      <div class="card shadow-xl absolute inset-0 rounded-2xl [transform:rotateY(180deg)] [backface-visibility:hidden] overflow-hidden border-3 border-gray-400">
         <div class="card-body items-center justify-center text-center relative">
           <div class="absolute top-4 right-4 opacity-70">
             <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
@@ -42,8 +42,8 @@ const {
           </div>
 
           <h2 class="card-title text-lg sm:text-xl">{backTitle}</h2>
-          <p class="text-sm sm:text-base opacity-90">{backText}</p>
-          <p class="text-xs opacity-70 mt-2">Tap to flip back</p>
+          <p class="text-sm sm:text-base">{backText}</p>
+          <p class="text-xs mt-2">Tap to flip back</p>
         </div>
       </div>
 

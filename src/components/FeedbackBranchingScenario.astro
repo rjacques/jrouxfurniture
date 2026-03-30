@@ -22,11 +22,11 @@ const learnerInitials = getInitials(learnerName);
 
 <section id={instanceId} class="mx-auto w-full max-w-6xl">
   <div class="grid gap-6 lg:grid-cols-[minmax(0,2fr)_320px]">
-    <div class="card border border-base-300 bg-base-100 shadow-xl">
+    <div class="card border border-base-300 bg-base-100 shadow-x  border-1 border-gray-400">
       <div class="card-body gap-6">
         <div class="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
           <div>
-            <p class="text-sm font-semibold uppercase tracking-wide text-primary">
+            <p class="text-sm font-semibold uppercase tracking-wide text-black">
               Branching scenario
             </p>
             <h2 class="card-title text-3xl">Giving Feedback: Chat Scenario</h2>
@@ -35,8 +35,8 @@ const learnerInitials = getInitials(learnerName);
             </p>
           </div>
 
-          <div class="rounded-2xl border border-primary/20 bg-primary/10 px-4 py-3">
-            <p class="text-xs font-semibold uppercase tracking-wide text-primary">
+          <div class="rounded-2xl border border-gray-500/20 bg-gray-100 px-4 py-3">
+            <p class="text-xs font-semibold uppercase tracking-wide text-black">
               Quality score
             </p>
             <p class="text-2xl font-bold" data-score>0%</p>
@@ -45,9 +45,9 @@ const learnerInitials = getInitials(learnerName);
 
         <!-- Character row -->
         <div class="grid gap-3 sm:grid-cols-2">
-          <div class="flex items-center gap-3 rounded-2xl border border-base-300 bg-base-100 p-4">
+          <div class="flex items-center gap-3 rounded-2xl border border-base-300 bg-base-100 p-4 border-1 border-gray-400">
             <div class="avatar">
-              <div class="w-14 rounded-full ring ring-primary ring-offset-2 ring-offset-base-100 overflow-hidden bg-primary text-primary-content flex items-center justify-center font-bold">
+              <div class="w-14 rounded-full ring ring-black ring-offset-2 ring-offset-base-100 overflow-hidden bg-black text-black-content flex items-center justify-center font-bold">
                 {
                   managerAvatar ? (
                     <img src={managerAvatar} alt={managerName} class="h-full w-full object-cover" />
@@ -64,9 +64,9 @@ const learnerInitials = getInitials(learnerName);
             </div>
           </div>
 
-          <div class="flex items-center gap-3 rounded-2xl border border-base-300 bg-base-100 p-4">
+          <div class="flex items-center gap-3 rounded-2xl border border-base-300 bg-base-100 p-4 border-1 border-gray-400 border-1 border-gray-400">
             <div class="avatar">
-              <div class="w-14 rounded-full ring ring-secondary ring-offset-2 ring-offset-base-100 overflow-hidden bg-secondary text-secondary-content flex items-center justify-center font-bold">
+              <div class="w-14 rounded-full ring ring-black ring-offset-2 ring-offset-base-100 overflow-hidden bg-black text-secondary-content flex items-center justify-center font-bold">
                 {
                   learnerAvatar ? (
                     <img src={learnerAvatar} alt={learnerName} class="h-full w-full object-cover" />
@@ -104,7 +104,7 @@ const learnerInitials = getInitials(learnerName);
           </div>
         </div>
 
-        <progress class="progress progress-primary w-full" max="4" value="1" data-progress></progress>
+        <progress class="progress progress-black w-full" max="4" value="1" data-progress></progress>
 
         <!-- Chat area -->
         <div class="rounded-2xl border border-base-300 bg-base-200/60 p-4">
@@ -125,7 +125,7 @@ const learnerInitials = getInitials(learnerName);
         <div class="grid gap-3" data-options></div>
 
         <!-- Choice feedback -->
-        <div class="hidden rounded-2xl border border-primary/20 bg-primary/10 p-5" data-feedback-wrap>
+        <div class="hidden rounded-2xl border border-black/20 bg-black10 p-5" data-feedback-wrap>
           <div class="mb-3 flex flex-wrap items-center gap-3">
             <span class="badge badge-outline" data-feedback-strength>Choice feedback</span>
             <p class="font-semibold" data-feedback-title></p>
@@ -133,7 +133,7 @@ const learnerInitials = getInitials(learnerName);
 
           <p class="mb-4 text-base-content/80" data-feedback-text></p>
 
-          <button type="button" class="btn btn-primary" data-continue>
+          <button type="button" class="btn btn-black" data-continue>
             Continue
           </button>
         </div>
@@ -186,7 +186,7 @@ const learnerInitials = getInitials(learnerName);
 
     <!-- Sidebar -->
     <aside class="space-y-6">
-      <div class="card border border-base-300 bg-base-100 shadow-lg">
+      <div class="card border border-base-300 bg-base-100 shadow-lg border-1 border-gray-400">
         <div class="card-body">
           <h3 class="card-title text-lg">Your path</h3>
           <p class="text-sm text-base-content/60">
@@ -198,7 +198,7 @@ const learnerInitials = getInitials(learnerName);
         </div>
       </div>
 
-      <div class="card border border-base-300 bg-base-100 shadow-lg">
+      <div class="card border border-base-300 bg-base-100 shadow-lg border-1 border-gray-400 border-1 border-gray-400">
         <div class="card-body">
           <h3 class="card-title text-lg">Helpful feedback formula</h3>
           <div class="space-y-3 text-sm text-base-content/80">
@@ -618,7 +618,7 @@ const learnerInitials = getInitials(learnerName);
       chip.className = "rounded-full border px-3 py-1 text-sm";
 
       if (item.points === 2) {
-        chip.classList.add("border-primary/20", "bg-primary/10", "text-primary");
+        chip.classList.add("border-black/20", "bg-black/10", "text-black");
       } else if (item.points === 1) {
         chip.classList.add("border-amber-200", "bg-amber-100", "text-amber-800");
       } else {
@@ -640,9 +640,9 @@ const learnerInitials = getInitials(learnerName);
         "rounded-2xl border border-base-300 bg-base-200 p-3 transition";
 
       if (stepNumber < currentStage) {
-        stepEl.classList.add("border-primary/20", "bg-primary/10");
+        stepEl.classList.add("border-black/20", "bg-black/10");
       } else if (stepNumber === currentStage) {
-        stepEl.classList.add("border-primary", "ring-2", "ring-primary/20");
+        stepEl.classList.add("border-black", "ring-2", "ring-black/20");
       }
     });
   }
@@ -653,8 +653,8 @@ const learnerInitials = getInitials(learnerName);
 
     const inner = document.createElement("div");
     inner.className = isManager
-      ? "w-10 rounded-full overflow-hidden bg-primary text-primary-content ring ring-primary ring-offset-2 ring-offset-base-100 flex items-center justify-center font-bold"
-      : "w-10 rounded-full overflow-hidden bg-secondary text-secondary-content ring ring-secondary ring-offset-2 ring-offset-base-100 flex items-center justify-center font-bold";
+      ? "w-10 rounded-full overflow-hidden bg-black text-black-content ring ring-black ring-offset-2 ring-offset-base-100 flex items-center justify-center font-bold"
+      : "w-10 rounded-full overflow-hidden bg-black text-black-content ring ring-black ring-offset-2 ring-offset-base-100 flex items-center justify-center font-bold";
 
     const imageSrc = isManager ? managerAvatar : learnerAvatar;
     const label = isManager ? managerName : learnerName;
@@ -713,7 +713,7 @@ const learnerInitials = getInitials(learnerName);
 
     const bubble = document.createElement("div");
     bubble.className = isManager
-      ? "chat-bubble chat-bubble-primary max-w-[80%]"
+      ? "chat-bubble chat-bubble-black max-w-[80%]"
       : "chat-bubble max-w-[80%]";
     bubble.textContent = message.text;
 
@@ -743,7 +743,7 @@ const learnerInitials = getInitials(learnerName);
       const button = document.createElement("button");
       button.type = "button";
       button.className =
-        "btn h-auto min-h-0 justify-start whitespace-normal rounded-2xl border-base-300 bg-base-100 px-5 py-4 text-left normal-case shadow-sm hover:border-primary hover:bg-base-200";
+        "btn h-auto min-h-0 justify-start whitespace-normal rounded-2xl border-base-300 bg-base-100 px-5 py-4 text-left normal-case shadow-sm hover:border-black hover:bg-base-200";
 
       const row = document.createElement("div");
       row.className = "flex items-start gap-3";
@@ -789,7 +789,7 @@ const learnerInitials = getInitials(learnerName);
         feedbackStrengthEl.className = "badge badge-outline";
 
         if (option.points === 2) {
-          feedbackStrengthEl.classList.add("border-primary", "text-primary");
+          feedbackStrengthEl.classList.add("border-black", "text-black");
         } else if (option.points === 1) {
           feedbackStrengthEl.classList.add("border-amber-500", "text-amber-700");
         } else {

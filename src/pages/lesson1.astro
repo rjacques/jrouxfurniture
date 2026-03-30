@@ -27,7 +27,7 @@ import Layout from '../layouts/main.astro';
 	
 
 
-<div class="hero min-h-auto bg-gray-100">
+<div class="hero min-h-auto bg-white">
   <div class="hero-content text-neutral-content text-center">
     <div class="max-w-4xl">
      <div class="size- inline-flex justify-start items-center gap-2.5">
@@ -51,7 +51,7 @@ import Layout from '../layouts/main.astro';
 
 
 
- <main class="flex-grow max-w-6xl mx-auto mt-[60px]">
+ <main class="flex-grow max-w-6xl mx-auto mt-[60px] pb-20">
 	
 
 
@@ -103,7 +103,7 @@ Poor feedback, on the other hand, often creates confusion. People may leave the 
   
   <div class="grid grid-cols-2 gap-6 pb-8">
     
-    <div class="card bg-base-100 w-full shadow-sm">
+    <div class="card bg-white w-full shadow-sm border-1 border-gray-400">
       <figure>
         <img class=" p-[30px] w-1/6" src="../src/images/location.svg" alt="Shoes" />
       </figure>
@@ -113,7 +113,7 @@ Poor feedback, on the other hand, often creates confusion. People may leave the 
       </div>
     </div>
 
-     <div class="card bg-base-100 w-full shadow-sm">
+     <div class="card bg-base-100 w-full shadow-sm border-1 border-gray-400">
       <figure>
         <img class=" p-[30px] w-1/6" src="../src/images/clock.svg" alt="Shoes" />
       </figure>
@@ -125,7 +125,7 @@ Timely feedback allows the person to reflect while the situation is still fresh 
       </div>
     </div>
 
-    <div class="card bg-base-100 w-full shadow-sm">
+    <div class="card bg-base-100 w-full shadow-sm border-1 border-gray-400">
       <figure>
         <img class=" p-[30px] w-1/6" src="../src/images/heart.svg" alt="Shoes" />
       </figure>
@@ -137,7 +137,7 @@ Respectful feedback does not attack, embarrass, or judge. Its purpose is to supp
       </div>
     </div>
 
-     <div class="card bg-base-100 w-full shadow-sm">
+     <div class="card bg-base-100 w-full shadow-sm border-1 border-gray-400">
       <figure>
         <img class=" p-[30px] w-1/6" src="../src/images/psychology.svg" alt="Shoes" />
       </figure>
@@ -165,8 +165,7 @@ Try:
 
 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6">
   <Flip frontTitle="Unhelpful" frontText="“You need to be more professional.”" backTitle="Helpful" backText="“In yesterday’s workshop, you arrived 15 minutes late and the session had already started. In future, arriving earlier will help the session begin smoothly.”" />
-  <Flip frontTitle="Unhelpful" frontText="Front text" backTitle="Helpful" backText="“The report was clear overall, but the recommendations section needed more evidence to support the points being made.”" />
-  <Flip frontTitle="Unhelpful" frontText="Front text" backTitle="Helpful" backText="“In the planning meeting, you interrupted others several times, which made it harder for everyone to contribute.”" />
+  <Flip frontTitle="Unhelpful" frontText="“That report was not good.”" backTitle="Helpful" backText="“The report was clear overall, but the recommendations section needed more evidence to support the points being made.”" />
 </div>
 
 
@@ -189,18 +188,16 @@ Try:
 
 
 
-<div
-  class="mb-30 mt-30 rounded-xl hero min-h-auto"
-  style="background-image: url(https://img.daisyui.com/images/stock/photo-1507358522600-9f71e620c44e.webp);"
+<div class="mt-30 rounded-xl hero min-h-auto" style="background-image: url(https://img.daisyui.com/images/stock/photo-1507358522600-9f71e620c44e.webp);"
 >
   <div class="hero-overlay rounded-xl"></div>
   <div class="hero-content text-neutral-content text-center">
     <div class="max-w-md">
-      <h1 class="mb-5 text-5xl font-bold">Reflection</h1>
-      <p class="mb-5">
+      <h1 class="mb-5 mt-5 text-3xl font-bold text-white italic">Reflection</h1>
+      <p class="mb-5 text-white">
         Think about a time when you received feedback that was genuinely helpful.
       </p>
-      <button class="btn btn-primary">Get Started</button>
+     
     </div>
   </div>
 </div>
@@ -243,6 +240,6 @@ Try:
 	</div>-->
 
 
-<FeedbackBranchingScenario />
+
  </main>
 </Layout>

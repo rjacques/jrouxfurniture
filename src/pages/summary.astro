@@ -1,0 +1,281 @@
+---
+import '../styles/global.css';
+import Button from '../components/Button.astro';
+import Layout from '../layouts/main.astro';
+
+const takeaways = [
+  {
+    icon: "🎯",
+    title: "Be specific",
+    text: "Focus on observable behaviour and clear examples, not vague opinions.",
+  },
+  {
+    icon: "⏰",
+    title: "Be timely",
+    text: "Share feedback while the moment is still fresh and relevant.",
+  },
+  {
+    icon: "🤝",
+    title: "Be supportive",
+    text: "The goal is improvement, not blame or embarrassment.",
+  },
+];
+
+const checks = [
+  "I can explain what makes feedback helpful.",
+  "I can spot vague or unhelpful feedback.",
+  "I can structure a short feedback conversation.",
+];
+---
+
+<Layout title="Hello">
+<main class="min-h-screen bg-base-200 text-base-content">
+  <section class="mx-auto w-full max-w-6xl px-6 py-10">
+    <!-- Hero -->
+    <div class="hero-box mb-10 rounded-3xl bg-base-100 shadow-xl border border-base-300 p-8 lg:p-12">
+      <div class="grid gap-8 lg:grid-cols-2 lg:items-center">
+        <div>
+          <div class="badge badge-neutral mb-4">Course complete</div>
+
+          <h1 class="text-4xl lg:text-5xl font-bold mb-4">
+            Summary
+          </h1>
+
+          <p class="text-base-content/70 text-lg leading-8 max-w-2xl">
+            You’ve reached the end of this short learning demo on giving
+            helpful feedback. Here’s a quick wrap-up of the key ideas, plus a
+            final confidence check.
+          </p>
+
+          <div class="mt-6 flex flex-wrap gap-3">
+            <a href="/" class="btn btn-neutral">Back to start</a>
+            <a href="/lesson1" class="btn btn-outline">Review lesson 1</a>
+          </div>
+        </div>
+
+        <div class="card bg-base-200 shadow-md border border-base-300">
+          <div class="card-body">
+            <h2 class="card-title text-2xl">Course snapshot</h2>
+
+            <div class="stats stats-vertical shadow bg-base-100 mt-4">
+              <div class="stat">
+                <div class="stat-title">Lessons</div>
+                <div class="stat-value">2</div>
+                <div class="stat-desc">In this sample</div>
+              </div>
+
+              <div class="stat">
+                <div class="stat-title">Key habits</div>
+                <div class="stat-value text-3xl">3</div>
+                <div class="stat-desc">Specific, timely, supportive</div>
+              </div>
+            </div>
+
+            <div class="mt-4 rounded-2xl bg-base-100 border border-base-300 p-4">
+              <p class="font-semibold mb-2">Final thought</p>
+              <p class="text-sm text-base-content/70 leading-6">
+                Great feedback is not about saying more. It is about saying the
+                right thing clearly, constructively, and at the right time.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Takeaways -->
+    <section class="mb-10">
+      <h2 class="text-3xl font-bold mb-2">Key takeaways</h2>
+      <p class="text-base-content/70 mb-6">
+        These are the main ideas from the course.
+      </p>
+
+      <div class="grid gap-6 md:grid-cols-3">
+        {takeaways.map((item) => (
+          <div class="summary-card card bg-base-100 shadow-lg border border-base-300">
+            <div class="card-body">
+              <div class="text-4xl mb-2">{item.icon}</div>
+              <h3 class="card-title">{item.title}</h3>
+              <p class="text-base-content/70 leading-7">{item.text}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Feedback flow -->
+    <section class="mb-10">
+      <div class="card bg-neutral text-neutral-content shadow-xl">
+        <div class="card-body">
+          <h2 class="card-title text-2xl">A practical feedback flow</h2>
+          <p class="text-neutral-content/80 max-w-3xl">
+            A simple way to remember the process is:
+            <strong> observe → describe → suggest → encourage</strong>.
+          </p>
+
+          <div class="mt-6 overflow-x-auto">
+            <ul class="steps steps-horizontal w-full min-w-[700px]">
+              <li class="step step-neutral">Observe</li>
+              <li class="step step-neutral">Describe</li>
+              <li class="step step-neutral">Suggest</li>
+              <li class="step step-neutral">Encourage</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bottom section -->
+    <section class="grid gap-6 lg:grid-cols-2">
+      <div class="card bg-base-100 shadow-lg border border-base-300">
+        <div class="card-body">
+          <h2 class="card-title text-2xl">Quick self-check</h2>
+          <p class="text-base-content/70">
+            Open each section for a fast recap.
+          </p>
+
+          <div class="mt-4 space-y-3">
+            <div class="collapse collapse-arrow bg-base-200 border border-base-300">
+              <input type="checkbox" />
+              <div class="collapse-title font-semibold">
+                What makes feedback useful?
+              </div>
+              <div class="collapse-content text-sm text-base-content/70">
+                Useful feedback is clear, specific, respectful, and linked to
+                behaviour that someone can improve.
+              </div>
+            </div>
+
+            <div class="collapse collapse-arrow bg-base-200 border border-base-300">
+              <input type="checkbox" />
+              <div class="collapse-title font-semibold">
+                What should you avoid?
+              </div>
+              <div class="collapse-content text-sm text-base-content/70">
+                Avoid vague comments, making it personal, waiting too long, or
+                trying to cover too many points at once.
+              </div>
+            </div>
+
+            <div class="collapse collapse-arrow bg-base-200 border border-base-300">
+              <input type="checkbox" />
+              <div class="collapse-title font-semibold">
+                What can you do next?
+              </div>
+              <div class="collapse-content text-sm text-base-content/70">
+                Think of one real conversation where you could apply this. Pick
+                one example, keep it short, and frame it supportively.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card bg-base-100 shadow-lg border border-base-300">
+        <div class="card-body">
+          <h2 class="card-title text-2xl">Confidence check</h2>
+          <p class="text-base-content/70">
+            How ready do you feel to use this skill?
+          </p>
+
+          <div class="mt-4 space-y-3">
+            <label class="option-box">
+              <input type="radio" name="confidence" class="radio radio-neutral" checked />
+              <span>Ready — I can try this today</span>
+            </label>
+
+            <label class="option-box">
+              <input type="radio" name="confidence" class="radio radio-neutral" />
+              <span>Almost there — I want a little more practice</span>
+            </label>
+
+            <label class="option-box">
+              <input type="radio" name="confidence" class="radio radio-neutral" />
+              <span>Not yet — I want to review the basics again</span>
+            </label>
+          </div>
+
+          <div class="divider"></div>
+
+          <h3 class="font-bold text-xl mb-3">What you should now be able to do</h3>
+
+          <div class="space-y-3">
+            {checks.map((item) => (
+              <label class="flex items-start gap-3 rounded-2xl bg-base-200 border border-base-300 p-4">
+                <input type="checkbox" checked class="checkbox checkbox-neutral mt-1" />
+                <span class="text-sm leading-6">{item}</span>
+              </label>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  </section>
+</main>
+
+<style>
+  .hero-box {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-box::before {
+    content: "";
+    position: absolute;
+    width: 220px;
+    height: 220px;
+    border-radius: 9999px;
+    top: -60px;
+    right: -40px;
+    background: rgba(255, 255, 255, 0.35);
+    filter: blur(20px);
+    animation: floaty 6s ease-in-out infinite;
+  }
+
+  .hero-box::after {
+    content: "";
+    position: absolute;
+    width: 160px;
+    height: 160px;
+    border-radius: 9999px;
+    bottom: -40px;
+    left: -20px;
+    background: rgba(255, 255, 255, 0.25);
+    filter: blur(20px);
+    animation: floaty 7s ease-in-out infinite reverse;
+  }
+
+  .summary-card {
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+
+  .summary-card:hover {
+    transform: translateY(-6px);
+  }
+
+  .option-box {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px;
+    border-radius: 1rem;
+    border: 1px solid #d9d9d9;
+    background: hsl(var(--b2));
+    cursor: pointer;
+    transition: transform 0.2s ease;
+  }
+
+  .option-box:hover {
+    transform: translateY(-2px);
+  }
+
+  @keyframes floaty {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+</style>
+</layout>
