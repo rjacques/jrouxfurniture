@@ -2,6 +2,8 @@
 import '../styles/global.css';
 import Button from '../components/Button.astro';
 import Layout from '../layouts/main.astro';
+  import Flip from "../components/Flip.astro";
+  import FeedbackBranchingScenario from "../components/FeedbackBranchingScenario.astro";
 ---
 
 <!--<html lang="en">
@@ -25,25 +27,18 @@ import Layout from '../layouts/main.astro';
 	
 
 
-<div class="hero min-h-screen"
-  style="background-image: url('../src/images/banner.avif');"
->
-  <div class="hero-overlay"></div>
+<div class="hero min-h-auto bg-gray-100">
   <div class="hero-content text-neutral-content text-center">
-    <div class="max-w-lg">
-      <h1 class="mb-5 text-5xl font-bold"></h1>
+    <div class="max-w-4xl">
      <div class="size- inline-flex justify-start items-center gap-2.5">
  <!-- <div class="size- px-4 py-2 bg-white rounded-sm shadow-[0px_1px_3px_0px_rgba(0,0,0,0.10)] shadow-[0px_1px_2px_0px_rgba(0,0,0,0.06)] outline outline-1 outline-offset-[-1px] outline-zinc-400 flex justify-start items-center overflow-hidden">
     <div class="text-center justify-center text-zinc-800 text-base font-medium font-['Helvetica_Neue'] leading-6">Button</div>
   </div>-->
 </div>
-<h1 class="text-5xl pb-[50px]">Giving helpful feedback</h1>
-	  <p class="mb-5">
-        Learn a simple approach to giving feedback that is clear, respectful, and useful in everyday work situations.
-      </p>
+<h1 class="text-4xl text-black pb-[40px] font-bold mt-14">Let's practice</h1>
+<p class="text-black mb-5">Practice giving feedback in a realistic workplace scenario. Choose how you would respond, explore the consequences of your choices, and learn how specific, respectful, and actionable feedback leads to better outcomes.</p>
 
-	  <div class="p-6">
-  <div class="text-white badge badge-neutral badge-outline">2 hours</div>
+	
 </div>
 
 
@@ -55,21 +50,38 @@ import Layout from '../layouts/main.astro';
 
 
 
- <main class="flex-grow max-w-6xl mx-auto">
+ <!--<main style="background-image: url('../src/images/banner.avif');">-->
+   <main class="mb-20">
+	
+ <div class="flex-grow max-w-6xl mx-auto mt-[60px]">
 
-	<div class="overflow-x-auto mt-[90px]">
-  <ul class="steps w-full">
-    <li class="step step-neutral">Learning outcomes</li>
-    <li class="step">Lesson 1</li>
-    <li class="step">Lesson 2</li>
-    <li class="step">Wrap</li>
-  </ul>
-</div>
+
+
+
+<p class="text-center">Good feedback helps people understand what is working, what needs to change, and what they can do next. It creates clarity. It supports learning. It can also build trust when it is shared respectfully and with the right intention.
+
+
+
+
+
+
+
+<!--<div role="alert" class="alert">
+  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 shrink-0 stroke-current" fill="none" viewBox="0 0 24 24">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+  </svg>
+  <span class="text-2xl font-bold">Helpful feedback should leave someone with a clearer understanding of their behaviour and a practical sense of what to do next.</span>
+</div>-->
+
+
+
+
+
+
 
 
 	
-	<h1 class="text-2xl pb-[70px] text-center font-bold mt-[60px]">Learning outcomes</h1>
-	<!--<p class="text-gray-500 pb-[40px]">By the end of this short course, you will be able to:</p>-->
+<!--<h1 class="mb-15 mt-30 text-2xl font-bold text-center">Four qualities of helpful feedback</h1>-->
 
 
 
@@ -77,34 +89,10 @@ import Layout from '../layouts/main.astro';
 
 
 
-	<div class="grid grid-cols-2 gap-8 pb-18">
-	<div class="card bg-base-100 shadow-sm bg-gray-50">
-  <div class="card-body">
-	<div class="text-4xl font-thin opacity-30 tabular-nums">01</div>
-    <h2 class="card-title">Explain why effective feedback matters</h2>
-  </div>
-</div>
 
-<div class="card bg-base-100 shadow-sm bg-gray-50">
-  <div class="card-body">
-		<div class="text-4xl font-thin opacity-30 tabular-nums">02</div>
-    <h2 class="card-title">Identify the traits of helpful feedback</h2>
-  </div>
-</div>
-<div class="card bg-base-100 shadow-sm bg-gray-50">
-  <div class="card-body">
-		<div class="text-4xl font-thin opacity-30 tabular-nums">03</div>
-    <h2 class="card-title">Use a simple model to structure feedback</h2>
-  </div>
-</div>
-<div class="card bg-base-100 shadow-sm bg-gray-50">
-  <div class="card-body">
-		<div class="text-4xl font-thin opacity-30 tabular-nums">04</div>
-    <h2 class="card-title">Avoid common feedback mistakes</h2>
-  </div>
-</div>
 
-</div>
+
+
 
 
 
@@ -140,6 +128,11 @@ import Layout from '../layouts/main.astro';
 	</div>-->
 
 
-
+<FeedbackBranchingScenario
+  managerName="Alex"
+  learnerName="Sam"
+  managerAvatar="../src/images/ava1.avif"
+  learnerAvatar="../src/images/ava2.avif"
+/>
  </main>
 </Layout>

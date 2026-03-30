@@ -3,6 +3,7 @@ import '../styles/global.css';
 import Button from '../components/Button.astro';
 import Layout from '../layouts/main.astro';
   import Flip from "../components/Flip.astro";
+  import FeedbackBranchingScenario from "../components/FeedbackBranchingScenario.astro";
 ---
 
 <!--<html lang="en">
@@ -26,16 +27,18 @@ import Layout from '../layouts/main.astro';
 	
 
 
-<div class="hero min-h-auto bg-gray-200">
+<div class="hero min-h-auto bg-gray-100">
   <div class="hero-content text-neutral-content text-center">
-    <div class="max-w-lg">
-      <h1 class="mb-5 text-9xl font-bold"></h1>
+    <div class="max-w-4xl">
      <div class="size- inline-flex justify-start items-center gap-2.5">
  <!-- <div class="size- px-4 py-2 bg-white rounded-sm shadow-[0px_1px_3px_0px_rgba(0,0,0,0.10)] shadow-[0px_1px_2px_0px_rgba(0,0,0,0.06)] outline outline-1 outline-offset-[-1px] outline-zinc-400 flex justify-start items-center overflow-hidden">
     <div class="text-center justify-center text-zinc-800 text-base font-medium font-['Helvetica_Neue'] leading-6">Button</div>
   </div>-->
 </div>
-<h1 class="text-6xl text-black pb-[40px]">What Makes Feedback Helpful?</h1>
+<h1 class="text-4xl text-black pb-[40px] font-bold mt-14">What makes feedback helpful?</h1>
+<p class="text-black mb-5">Feedback is part of everyday work. We give it in meetings, in project reviews, during coaching, and in quick conversations with colleagues. When feedback is done well, it helps people improve, grow, and work better together. When it is done badly, it can feel vague, personal, or discouraging.</p>
+
+<p class="text-black mb-20">In this lesson, you will look at what makes feedback genuinely helpful and how to recognise the difference between useful feedback and unhelpful criticism.</p>
 	
 </div>
 
@@ -49,15 +52,13 @@ import Layout from '../layouts/main.astro';
 
 
  <main class="flex-grow max-w-6xl mx-auto mt-[60px]">
-	<p class="text-black mb-5">Feedback is part of everyday work. We give it in meetings, in project reviews, during coaching, and in quick conversations with colleagues. When feedback is done well, it helps people improve, grow, and work better together. When it is done badly, it can feel vague, personal, or discouraging.</p>
-
-<p class="text-black">In this lesson, you will look at what makes feedback genuinely helpful and how to recognise the difference between useful feedback and unhelpful criticism.</p>
+	
 
 
 
 
-<h1 class="mb-5 mt-25 text-4xl font-bold text-center">Why feedback matters</h1>
-<p>Good feedback helps people understand what is working, what needs to change, and what they can do next. It creates clarity. It supports learning. It can also build trust when it is shared respectfully and with the right intention.
+<h1 class="mb-5 mt-25 text-2xl font-bold text-center">Why feedback matters</h1>
+<p class="text-center">Good feedback helps people understand what is working, what needs to change, and what they can do next. It creates clarity. It supports learning. It can also build trust when it is shared respectfully and with the right intention.
 
 In healthy teams, feedback is not only about correcting mistakes. It is also about recognising strengths, encouraging progress, and helping people perform at their best.
 
@@ -67,12 +68,12 @@ Poor feedback, on the other hand, often creates confusion. People may leave the 
 
 
 
-<div role="alert" class="alert">
+<!--<div role="alert" class="alert">
   <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 shrink-0 stroke-current" fill="none" viewBox="0 0 24 24">
     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
   </svg>
   <span class="text-2xl font-bold">Helpful feedback should leave someone with a clearer understanding of their behaviour and a practical sense of what to do next.</span>
-</div>
+</div>-->
 
 
 
@@ -82,8 +83,8 @@ Poor feedback, on the other hand, often creates confusion. People may leave the 
 >
   <div class="hero-overlay rounded-xl"></div>
   <div class="hero-content text-neutral-content text-center">
-    <div class="max-w-md">
-      <p class="mb-5 text-4xl font-bold text-white italic">
+    <div class="max-w-2xl">
+      <p class="mb-10 mt-10 text-3xl font-bold text-white italic">
         Helpful feedback should leave someone with a clearer understanding of their behaviour and a practical sense of what to do next
       </p>
     </div>
@@ -95,7 +96,7 @@ Poor feedback, on the other hand, often creates confusion. People may leave the 
 
 
 	
-<h1 class="mb-15 mt-30 text-4xl font-bold text-center">Four qualities of helpful feedback</h1>
+<h1 class="mb-15 mt-30 text-2xl font-bold text-center">Four qualities of helpful feedback</h1>
 
 
 <main class="flex-grow">
@@ -103,40 +104,43 @@ Poor feedback, on the other hand, often creates confusion. People may leave the 
   <div class="grid grid-cols-2 gap-6 pb-8">
     
     <div class="card bg-base-100 w-full shadow-sm">
+      <figure>
+        <img class=" p-[30px] w-1/6" src="../src/images/location.svg" alt="Shoes" />
+      </figure>
       <div class="card-body">
         <h2 class="card-title">It is specific</h2>
         <p>Helpful feedback focuses on a clear behaviour or example. It describes what happened rather than making broad statements.</p>
       </div>
-      <figure>
-        <img class=" p-[30px] w-1/5" src="../src/images/location.svg" alt="Shoes" />
-      </figure>
     </div>
 
      <div class="card bg-base-100 w-full shadow-sm">
+      <figure>
+        <img class=" p-[30px] w-1/6" src="../src/images/clock.svg" alt="Shoes" />
+      </figure>
       <div class="card-body">
         <h2 class="card-title">It is timely</h2>
         <p>Feedback is most useful when it is given close enough to the event that the details are still clear. Waiting too long can reduce its value and make the conversation harder.
 
 Timely feedback allows the person to reflect while the situation is still fresh and apply changes sooner.</p>
       </div>
-      <figure>
-        <img class=" p-[30px] w-1/5" src="../src/images/clock.svg" alt="Shoes" />
-      </figure>
     </div>
 
     <div class="card bg-base-100 w-full shadow-sm">
+      <figure>
+        <img class=" p-[30px] w-1/6" src="../src/images/heart.svg" alt="Shoes" />
+      </figure>
       <div class="card-body">
         <h2 class="card-title">It is respectful</h2>
         <p>Helpful feedback shows respect for the other person. It focuses on behaviour, not character, and it is delivered in a calm and constructive way.
 
 Respectful feedback does not attack, embarrass, or judge. Its purpose is to support improvement, not to win an argument or make someone feel small.</p>
       </div>
-      <figure>
-        <img class=" p-[30px] w-1/5" src="../src/images/heart.svg" alt="Shoes" />
-      </figure>
     </div>
 
      <div class="card bg-base-100 w-full shadow-sm">
+      <figure>
+        <img class=" p-[30px] w-1/6" src="../src/images/psychology.svg" alt="Shoes" />
+      </figure>
       <div class="card-body">
         <h2 class="card-title">It focuses on behaviour, not personality</h2>
         <p>Helpful feedback talks about what someone did, not who they are. This is important because behaviour can be changed. Personality labels often feel personal and unfair.
@@ -147,9 +151,6 @@ Instead of:
 Try:
 “There were two errors in the final document, which meant we had to correct and resend it.”</p>
       </div>
-      <figure>
-        <img class=" p-[30px] w-1/5" src="../src/images/psychology.svg" alt="Shoes" />
-      </figure>
     </div>
 
   </div>
@@ -158,11 +159,11 @@ Try:
 </main>
 
 
-	<h1 class="text-4xl pb-[70px] text-center font-bold mt-[60px]">Helpful vs unhelpful feedback</h1>
+	<h1 class="text-2xl pb-[70px] text-center font-bold mt-[60px]">Helpful vs unhelpful feedback</h1>
 	<!--<p class="text-gray-500 pb-[40px]">By the end of this short course, you will be able to:</p>-->
 
 
-<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6">
   <Flip frontTitle="Unhelpful" frontText="“You need to be more professional.”" backTitle="Helpful" backText="“In yesterday’s workshop, you arrived 15 minutes late and the session had already started. In future, arriving earlier will help the session begin smoothly.”" />
   <Flip frontTitle="Unhelpful" frontText="Front text" backTitle="Helpful" backText="“The report was clear overall, but the recommendations section needed more evidence to support the points being made.”" />
   <Flip frontTitle="Unhelpful" frontText="Front text" backTitle="Helpful" backText="“In the planning meeting, you interrupted others several times, which made it harder for everyone to contribute.”" />
@@ -242,6 +243,6 @@ Try:
 	</div>-->
 
 
-
+<FeedbackBranchingScenario />
  </main>
 </Layout>
