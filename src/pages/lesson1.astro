@@ -4,6 +4,8 @@ import Button from '../components/Button.astro';
 import Layout from '../layouts/main.astro';
   import Flip from "../components/Flip.astro";
   import FeedbackBranchingScenario from "../components/FeedbackBranchingScenario.astro";
+  import CourseSteps from '../components/CourseSteps.astro';
+import CourseNav from '../components/CourseNav.astro';
 ---
 
 <!--<html lang="en">
@@ -52,6 +54,7 @@ import Layout from '../layouts/main.astro';
 
 
  <main class="flex-grow max-w-6xl mx-auto mt-[60px] pb-20">
+	<CourseSteps current="lesson1" />
 	
 
 
@@ -238,7 +241,12 @@ Try:
 			<div class="collapse-content text-sm">Go to "My Account" settings and select "Edit Profile" to make changes.</div>
 		</div>
 	</div>-->
-
+<CourseNav
+  prevHref="/"
+  prevLabel="Intro"
+  nextHref="/scenario"
+  nextLabel="Scenario"
+/>
 
 
  </main>

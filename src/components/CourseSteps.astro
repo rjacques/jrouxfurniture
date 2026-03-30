@@ -1,0 +1,22 @@
+---
+const { current = "intro" } = Astro.props;
+
+const steps = [
+  { key: "intro", label: "Intro" },
+  { key: "lesson1", label: "Lesson 1" },
+  { key: "scenario", label: "Scenario" },
+  { key: "summary", label: "Summary" },
+];
+
+const currentIndex = steps.findIndex((step) => step.key === current);
+---
+
+<div class="overflow-x-auto mt-[20px]">
+  <ul class="steps w-full min-w-[700px]">
+    {steps.map((step, index) => (
+      <li class={`step ${index <= currentIndex ? "step-neutral" : ""}`}>
+        {step.label}
+      </li>
+    ))}
+  </ul>
+</div>

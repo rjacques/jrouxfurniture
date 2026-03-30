@@ -2,6 +2,8 @@
 import '../styles/global.css';
 import Button from '../components/Button.astro';
 import Layout from '../layouts/main.astro';
+import CourseSteps from '../components/CourseSteps.astro';
+import CourseNav from '../components/CourseNav.astro';
 ---
 
 <!--<html lang="en">
@@ -55,16 +57,9 @@ import Layout from '../layouts/main.astro';
 
 
 
- <main class="flex-grow max-w-6xl mx-auto">
+ <main class="flex-grow max-w-6xl mx-auto pb-20">
 
-	<div class="overflow-x-auto mt-[90px]">
-  <ul class="steps w-full">
-    <li class="step step-neutral">Intro</li>
-    <li class="step">Lesson 1</li>
-    <li class="step">Scenario</li>
-    <li class="step">Summary</li>
-  </ul>
-</div>
+<CourseSteps current="intro" />
 
 
 	
@@ -139,7 +134,7 @@ import Layout from '../layouts/main.astro';
 		</div>
 	</div>-->
 
-
+<CourseNav nextHref="/lesson1" nextLabel="Lesson 1" />
 
  </main>
 </Layout>

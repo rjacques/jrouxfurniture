@@ -4,6 +4,8 @@ import Button from '../components/Button.astro';
 import Layout from '../layouts/main.astro';
   import Flip from "../components/Flip.astro";
   import FeedbackBranchingScenario from "../components/FeedbackBranchingScenario.astro";
+  import CourseSteps from '../components/CourseSteps.astro';
+import CourseNav from '../components/CourseNav.astro';
 ---
 
 <!--<html lang="en">
@@ -55,7 +57,7 @@ import Layout from '../layouts/main.astro';
 	
  <div class="flex-grow max-w-6xl mx-auto mt-[60px]">
 
-
+<CourseSteps current="scenario" />
 
 
 
@@ -126,12 +128,19 @@ import Layout from '../layouts/main.astro';
 		</div>
 	</div>-->
 
-
+<div class="mt-20">
 <FeedbackBranchingScenario
   managerName="Alex"
   learnerName="Sam"
   managerAvatar="../src/images/ava1.avif"
   learnerAvatar="../src/images/ava2.avif"
+/>
+</div>
+<CourseNav
+  prevHref="/lesson1"
+  prevLabel="Lesson 1"
+  nextHref="/summary"
+  nextLabel="Summary"
 />
  </main>
 </Layout>

@@ -1,5 +1,4 @@
 ---
-// FlipCard.astro
 const {
   frontTitle = "Front",
   frontText = "This is the front of the card.",
@@ -8,42 +7,56 @@ const {
 } = Astro.props;
 ---
 
-<div class="flip-card w-full min-h-60 [perspective:1000px]">
+<div class="flip-card w-full min-h-[320px] [perspective:1000px]">
   <button
     type="button"
-    class="flip-trigger relative h-full w-full text-left rounded-2xl focus:outline-none focus:ring-2 focus:ring-primary"
+    class="flip-trigger relative h-full w-full text-left rounded-2xl focus:outline-none focus:ring-2 focus:ring-black/20"
     aria-label="Flip card"
     aria-pressed="false"
   >
     <div class="flip-inner relative h-full w-full duration-500 [transform-style:preserve-3d]">
-      
+
       <!-- Front -->
-      <div class="card shadow-xl absolute inset-0 rounded-2xl [backface-visibility:hidden] overflow-hidden border-3 border-gray-400 bg-white">
-        <div class="card-body items-center justify-center text-center relative">
-          <div class="absolute top-4 right-4 opacity-60">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M12 5V2L8 6l4 4V7c3.31 0 6 2.69 6 6 0 1.01-.25 1.96-.69 2.8l1.46 1.46A7.93 7.93 0 0 0 20 13c0-4.42-3.58-8-8-8zm-6.77.74A7.93 7.93 0 0 0 4 11c0 4.42 3.58 8 8 8v3l4-4-4-4v3c-3.31 0-6-2.69-6-6 0-1.01.25-1.96.69-2.8L5.23 5.74z"/>
-            </svg>
+      <div class="flip-face flip-front absolute inset-0 rounded-2xl [backface-visibility:hidden] overflow-hidden">
+        <div class="face-inner">
+          <div class="face-top">
+            <span class="face-tag face-tag-muted">{frontTitle}</span>
+
+            <span class="flip-icon" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 5V2L8 6l4 4V7c3.31 0 6 2.69 6 6 0 1.01-.25 1.96-.69 2.8l1.46 1.46A7.93 7.93 0 0 0 20 13c0-4.42-3.58-8-8-8zm-6.77.74A7.93 7.93 0 0 0 4 11c0 4.42 3.58 8 8 8v3l4-4-4-4v3c-3.31 0-6-2.69-6-6 0-1.01.25-1.96.69-2.8L5.23 5.74z"/>
+              </svg>
+            </span>
           </div>
 
-          <h2 class="card-title text-lg sm:text-xl">{frontTitle}</h2>
-          <p class="text-sm sm:text-base text-base-content/80">{frontText}</p>
-          <p class="text-xs opacity-50 mt-2">Tap to flip</p>
+          <div class="face-content">
+            <p class="quote-mark">“</p>
+            <p class="face-text">{frontText}</p>
+          </div>
+
+          <p class="face-hint">Tap to flip</p>
         </div>
       </div>
 
       <!-- Back -->
-      <div class="card shadow-xl absolute inset-0 rounded-2xl [transform:rotateY(180deg)] [backface-visibility:hidden] overflow-hidden border-3 border-gray-400">
-        <div class="card-body items-center justify-center text-center relative">
-          <div class="absolute top-4 right-4 opacity-70">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M12 5V2L8 6l4 4V7c3.31 0 6 2.69 6 6 0 1.01-.25 1.96-.69 2.8l1.46 1.46A7.93 7.93 0 0 0 20 13c0-4.42-3.58-8-8-8zm-6.77.74A7.93 7.93 0 0 0 4 11c0 4.42 3.58 8 8 8v3l4-4-4-4v3c-3.31 0-6-2.69-6-6 0-1.01.25-1.96.69-2.8L5.23 5.74z"/>
-            </svg>
+      <div class="flip-face flip-back absolute inset-0 rounded-2xl [transform:rotateY(180deg)] [backface-visibility:hidden] overflow-hidden">
+        <div class="face-inner">
+          <div class="face-top">
+            <span class="face-tag face-tag-strong">{backTitle}</span>
+
+            <span class="flip-icon" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 5V2L8 6l4 4V7c3.31 0 6 2.69 6 6 0 1.01-.25 1.96-.69 2.8l1.46 1.46A7.93 7.93 0 0 0 20 13c0-4.42-3.58-8-8-8zm-6.77.74A7.93 7.93 0 0 0 4 11c0 4.42 3.58 8 8 8v3l4-4-4-4v3c-3.31 0-6-2.69-6-6 0-1.01.25-1.96.69-2.8L5.23 5.74z"/>
+              </svg>
+            </span>
           </div>
 
-          <h2 class="card-title text-lg sm:text-xl">{backTitle}</h2>
-          <p class="text-sm sm:text-base">{backText}</p>
-          <p class="text-xs mt-2">Tap to flip back</p>
+          <div class="face-content">
+            <p class="quote-mark">“</p>
+            <p class="face-text">{backText}</p>
+          </div>
+
+          <p class="face-hint">Tap to flip back</p>
         </div>
       </div>
 
@@ -52,15 +65,126 @@ const {
 </div>
 
 <style>
+  .flip-card {
+    transition: transform 0.2s ease;
+  }
+
+  .flip-card:hover {
+    transform: translateY(-4px);
+  }
+
   .flip-card.is-flipped .flip-inner {
     transform: rotateY(180deg);
   }
 
- .flip-card .focus\:ring-primary {
-    &:focus {
-        --tw-ring-color: none;;
+  .flip-face {
+    background: #111111;
+    color: white;
+    border: 1px solid #2f2f2f;
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.18);
+  }
+
+  .flip-front::before,
+  .flip-back::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      135deg,
+      rgba(255,255,255,0.08),
+      transparent 38%
+    );
+    pointer-events: none;
+  }
+
+  .face-inner {
+    position: relative;
+    z-index: 1;
+    height: 100%;
+    min-height: 320px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .face-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+  }
+
+  .face-tag {
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 12px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .face-tag-muted {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.14);
+    color: rgba(255,255,255,0.8);
+  }
+
+  .face-tag-strong {
+    background: white;
+    color: black;
+    border: 1px solid white;
+  }
+
+  .flip-icon {
+    color: rgba(255,255,255,0.55);
+    flex-shrink: 0;
+  }
+
+  .face-content {
+    margin: 22px 0 18px;
+  }
+
+  .quote-mark {
+    margin: 0 0 10px;
+    font-size: 3rem;
+    line-height: 1;
+    color: rgba(255,255,255,0.22);
+    font-weight: 700;
+  }
+
+  .face-text {
+    margin: 0;
+    font-size: 1.45rem;
+    line-height: 1.45;
+    font-weight: 700;
+    max-width: 95%;
+  }
+
+  .face-hint {
+    margin: 20px 0 0;
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.55);
+  }
+
+  .flip-trigger:focus-visible {
+    outline: none;
+  }
+
+  @media (max-width: 640px) {
+    .face-inner {
+      min-height: 280px;
+      padding: 20px;
     }
-}
+
+    .face-text {
+      font-size: 1.2rem;
+      line-height: 1.4;
+      max-width: 100%;
+    }
+  }
 </style>
 
 <script>

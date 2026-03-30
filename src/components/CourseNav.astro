@@ -1,0 +1,32 @@
+---
+const {
+  prevHref,
+  prevLabel = "Previous",
+  nextHref,
+  nextLabel = "Next",
+} = Astro.props;
+---
+
+<div class="mt-[80px] pt-8 border-t border-gray-300">
+  <div class="flex flex-col-reverse gap-4 sm:flex-row sm:items-center sm:justify-between">
+    <div>
+      {prevHref ? (
+        <a href={prevHref} class="btn btn-outline">
+          ← {prevLabel}
+        </a>
+      ) : (
+        <div></div>
+      )}
+    </div>
+
+    <div class="sm:ml-auto">
+      {nextHref ? (
+        <a href={nextHref} class="btn btn-neutral">
+          {nextLabel} →
+        </a>
+      ) : (
+        <div></div>
+      )}
+    </div>
+  </div>
+</div>
