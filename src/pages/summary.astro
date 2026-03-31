@@ -3,6 +3,7 @@ import '../styles/global.css';
 import Layout from '../layouts/main.astro';
 import CourseSteps from '../components/CourseSteps.astro';
 import CourseNav from '../components/CourseNav.astro';
+import reflectionImage from '../images/banner.avif';
 ---
 
 <Layout title="Summary">
@@ -127,8 +128,7 @@ import CourseNav from '../components/CourseNav.astro';
     <!-- reflection / ending -->
     <div
       class="mt-[70px] rounded-xl hero min-h-auto"
-      style="background-image: url(https://img.daisyui.com/images/stock/photo-1507358522600-9f71e620c44e.webp);"
-    >
+      style={`background-image: url(${reflectionImage.src});`}>
       <div class="hero-overlay rounded-xl"></div>
       <div class="hero-content text-neutral-content text-center">
         <div class="max-w-2xl">

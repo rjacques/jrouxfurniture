@@ -4,6 +4,7 @@ import Button from '../components/Button.astro';
 import Layout from '../layouts/main.astro';
 import CourseSteps from '../components/CourseSteps.astro';
 import CourseNav from '../components/CourseNav.astro';
+import bannerImage from '../images/banner.avif';
 ---
 
 <!--<html lang="en">
@@ -28,8 +29,7 @@ import CourseNav from '../components/CourseNav.astro';
 
 
 <div class="hero min-h-screen"
-  style="background-image: url('../src/images/banner.avif');"
->
+ style={`background-image: url(${bannerImage.src});`}>
   <div class="hero-overlay"></div>
   <div class="hero-content text-neutral-content text-center">
     <div class="max-w-lg">

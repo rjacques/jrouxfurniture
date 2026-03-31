@@ -6,6 +6,8 @@ import Layout from '../layouts/main.astro';
   import FeedbackBranchingScenario from "../components/FeedbackBranchingScenario.astro";
   import CourseSteps from '../components/CourseSteps.astro';
 import CourseNav from '../components/CourseNav.astro';
+import managerImage from '../images/ava1.avif';
+import learnerImage from '../images/ava2.avif';
 ---
 
 <!--<html lang="en">
@@ -132,8 +134,8 @@ import CourseNav from '../components/CourseNav.astro';
 <FeedbackBranchingScenario
   managerName="Alex"
   learnerName="Sam"
-  managerAvatar="../src/images/ava1.avif"
-  learnerAvatar="../src/images/ava2.avif"
+  managerAvatar={managerImage.src}
+  learnerAvatar={learnerImage.src}
 />
 </div>
 <CourseNav

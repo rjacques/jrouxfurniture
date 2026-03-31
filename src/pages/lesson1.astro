@@ -6,6 +6,11 @@ import Layout from '../layouts/main.astro';
   import FeedbackBranchingScenario from "../components/FeedbackBranchingScenario.astro";
   import CourseSteps from '../components/CourseSteps.astro';
 import CourseNav from '../components/CourseNav.astro';
+import locationImage from '../images/location.svg';
+import heartImage from '../images/heart.svg';
+import clockImage from '../images/clock.svg';
+import heartImage from '../images/heart.svg';
+import reflectionImage from '../images/banner.avif';
 ---
 
 <!--<html lang="en">
@@ -81,8 +86,7 @@ Poor feedback, on the other hand, often creates confusion. People may leave the 
 
 
 <div
-  class="mb-30 mt-30 rounded-xl hero min-h-auto"
-  style="background-image: url(https://img.daisyui.com/images/stock/photo-1507358522600-9f71e620c44e.webp);"
+  class="mb-30 mt-30 rounded-xl hero min-h-auto" style={`background-image: url(${reflectionImage.src});`}>
 >
   <div class="hero-overlay rounded-xl"></div>
   <div class="hero-content text-neutral-content text-center">
@@ -108,7 +112,7 @@ Poor feedback, on the other hand, often creates confusion. People may leave the 
     
     <div class="card bg-white w-full shadow-sm border-1 border-gray-400">
       <figure>
-        <img class=" p-[30px] w-1/6" src="../src/images/location.svg" alt="Shoes" />
+        <img class=" p-[30px] w-1/6" src={locationImage.src} alt="Shoes" />
       </figure>
       <div class="card-body">
         <h2 class="card-title">It is specific</h2>
@@ -118,7 +122,7 @@ Poor feedback, on the other hand, often creates confusion. People may leave the 
 
      <div class="card bg-base-100 w-full shadow-sm border-1 border-gray-400">
       <figure>
-        <img class=" p-[30px] w-1/6" src="../src/images/clock.svg" alt="Shoes" />
+        <img class=" p-[30px] w-1/6" src={clockImage.src} alt="Shoes" />
       </figure>
       <div class="card-body">
         <h2 class="card-title">It is timely</h2>
@@ -130,7 +134,7 @@ Timely feedback allows the person to reflect while the situation is still fresh 
 
     <div class="card bg-base-100 w-full shadow-sm border-1 border-gray-400">
       <figure>
-        <img class=" p-[30px] w-1/6" src="../src/images/heart.svg" alt="Shoes" />
+        <img class=" p-[30px] w-1/6" src={heartImage.src} alt="Shoes" />
       </figure>
       <div class="card-body">
         <h2 class="card-title">It is respectful</h2>
@@ -191,8 +195,7 @@ Try:
 
 
 
-<div class="mt-30 rounded-xl hero min-h-auto" style="background-image: url(https://img.daisyui.com/images/stock/photo-1507358522600-9f71e620c44e.webp);"
->
+<div class="mt-30 rounded-xl hero min-h-auto" style={`background-image: url(${reflectionImage.src});`}>
   <div class="hero-overlay rounded-xl"></div>
   <div class="hero-content text-neutral-content text-center">
     <div class="max-w-md">
