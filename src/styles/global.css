@@ -337,27 +337,31 @@ h1 {
 	}
 
 	.hero {
-		display: grid;
-		min-height: auto;
+		display: block;
+		min-height: 620px;
 	}
 
 	.hero__image {
-		position: relative;
-		order: 2;
-		aspect-ratio: 4 / 3;
-		background-position: 68% center;
+		position: absolute;
+		inset: 0;
+		background-position: 61% center;
 		opacity: 1;
 	}
 
 	.hero__content {
-		order: 1;
-		min-height: auto;
-		padding-block: 72px 58px;
-		background: #f7f3ee;
+		min-height: inherit;
+		padding-bottom: 190px;
+		background: linear-gradient(
+			180deg,
+			rgb(247 243 238 / 98%) 0%,
+			rgb(247 243 238 / 88%) 36%,
+			rgb(247 243 238 / 12%) 68%,
+			transparent 100%
+		);
 	}
 
 	h1 {
-		font-size: clamp(2.8rem, 13vw, 3.9rem);
+		font-size: clamp(2.65rem, 12vw, 3.7rem);
 	}
 
 	.collections {
