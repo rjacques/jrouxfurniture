@@ -338,12 +338,14 @@ h1 {
 
 	.hero {
 		display: grid;
+		grid-template-rows: auto auto;
 		min-height: auto;
 		background: #f7f3ee;
 	}
 
 	.hero__image {
 		position: relative;
+		grid-area: 2 / 1;
 		order: 2;
 		aspect-ratio: 16 / 10;
 		background-position: center;
@@ -353,6 +355,7 @@ h1 {
 	}
 
 	.hero__content {
+		grid-area: 1 / 1;
 		order: 1;
 		min-height: auto;
 		padding-block: 64px 48px;
