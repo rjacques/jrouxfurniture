@@ -1,0 +1,57 @@
+---
+import type { Product } from '../data/products';
+
+interface Props {
+	product: Product;
+}
+
+const { product } = Astro.props;
+const optionEntries = Object.entries(product.options);
+const formatPrice = (price: number) => `R${price.toLocaleString('en-ZA')}`;
+---
+
+<article class="product-card" data-product-card>
+	<div class="product-card__image-wrap">
+		<img src={product.image} alt={product.name} class="product-card__image" loading="lazy" />
+	</div>
+	<div class="product-card__body">
+		<h3>{product.name}</h3>
+		<div class="timber-tabs" role="group" aria-label={`Choose timber for ${product.name}`}>
+			{optionEntries.map(([key, option], index) => (
+				<button
+					type="button"
+					class:list={['timber-tab', { 'is-active': index === 0 }]}
+					data-price={formatPrice(option.price)}
+					data-availability={option.availability}
+					data-timber={key}
+					aria-pressed={index === 0 ? 'true' : 'false'}
+				>
+					{option.label}
+				</button>
+			))}
+		</div>
+		<div class="product-card__meta">
+			<p class="product-price" data-product-price>{formatPrice(product.options.ash.price)}</p>
+			<p class="availability">Availability: <span data-product-availability>{product.options.ash.availability}</span></p>
+		</div>
+	</div>
+</article>
+
+<script>
+	document.querySelectorAll('[data-product-card]').forEach((card) => {
+		card.querySelectorAll<HTMLButtonElement>('.timber-tab').forEach((tab) => {
+			tab.addEventListener('click', () => {
+				card.querySelectorAll<HTMLButtonElement>('.timber-tab').forEach((item) => {
+					const active = item === tab;
+					item.classList.toggle('is-active', active);
+					item.setAttribute('aria-pressed', String(active));
+				});
+
+				const price = card.querySelector<HTMLElement>('[data-product-price]');
+				const availability = card.querySelector<HTMLElement>('[data-product-availability]');
+				if (price) price.textContent = tab.dataset.price ?? '';
+				if (availability) availability.textContent = tab.dataset.availability ?? '';
+			});
+		});
+	});
+</script>

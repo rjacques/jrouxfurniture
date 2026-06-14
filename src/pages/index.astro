@@ -1,140 +1,38 @@
 ---
-import '../styles/global.css';
-import Button from '../components/Button.astro';
 import Layout from '../layouts/main.astro';
-import CourseSteps from '../components/CourseSteps.astro';
-import CourseNav from '../components/CourseNav.astro';
-import bannerImage from '../images/banner.avif';
+import Hero from '../components/Hero.astro';
+import ProductSection from '../components/ProductSection.astro';
+import { products } from '../data/products';
+
+const ranges = [
+	{
+		id: 'essential',
+		title: 'Essential',
+		description: 'Clean, simple, minimal pieces for everyday living.',
+	},
+	{
+		id: 'ground',
+		title: 'Ground',
+		description: 'More substantial pieces with weight and presence.',
+	},
+	{
+		id: 'lift',
+		title: 'Lift',
+		description: 'Lighter, refined forms with softer proportions.',
+	},
+] as const;
 ---
 
-<!--<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro + TailwindCSS</title>
-	</head>
-
-	<body>
-		<Button>a tailwind button</Button>
-		<h1>Astro</h1>
-		<h2>Testing</h2>
-	</body>
-</html>-->
-
-<Layout title="Hello" class="bg-base-200">
-	
-
-
-<div class="hero min-h-screen"
- style={`background-image: url(${bannerImage.src});`}>
-  <div class="hero-overlay"></div>
-  <div class="hero-content text-neutral-content text-center">
-    <div class="max-w-lg">
-      <h1 class="mb-5 text-5xl font-bold"></h1>
-     <div class="size- inline-flex justify-start items-center gap-2.5">
- <!-- <div class="size- px-4 py-2 bg-white rounded-sm shadow-[0px_1px_3px_0px_rgba(0,0,0,0.10)] shadow-[0px_1px_2px_0px_rgba(0,0,0,0.06)] outline outline-1 outline-offset-[-1px] outline-zinc-400 flex justify-start items-center overflow-hidden">
-    <div class="text-center justify-center text-zinc-800 text-base font-medium font-['Helvetica_Neue'] leading-6">Button</div>
-  </div>-->
-</div>
-<h1 class="text-5xl pb-[50px]">Giving helpful feedback</h1>
-	  <p class="mb-5">
-        Learn a simple approach to giving feedback that is clear, respectful, and useful in everyday work situations.
-      </p>
-
-	  <div class="p-6">
-  <div class="text-white badge badge-neutral badge-outline">2 hours</div>
-</div>
-
-
-
-      <!--<button class="btn btn-primary">Get Started</button> -->
-    </div>
-  </div>
-</div>
-
-
-
- <main class="flex-grow max-w-6xl mx-auto pb-20">
-
-<CourseSteps current="intro" />
-
-
-	
-	<h1 class="text-2xl pb-[70px] text-center font-bold mt-[60px]">Learning outcomes</h1>
-	<!--<p class="text-gray-500 pb-[40px]">By the end of this short course, you will be able to:</p>-->
-
-
-
-
-
-
-
-	<div class="grid grid-cols-2 gap-8 pb-18">
-	<div class="card bg-base-100 shadow-sm bg-gray-50 border-1 border-gray-400">
-  <div class="card-body">
-	<div class="text-4xl font-thin opacity-30 tabular-nums">01</div>
-    <h2 class="card-title">Explain why effective feedback matters</h2>
-  </div>
-</div>
-
-<div class="card bg-base-100 shadow-sm bg-gray-50 border-1 border-gray-400">
-  <div class="card-body">
-		<div class="text-4xl font-thin opacity-30 tabular-nums">02</div>
-    <h2 class="card-title">Identify the traits of helpful feedback</h2>
-  </div>
-</div>
-<div class="card bg-base-100 shadow-sm bg-gray-50 border-1 border-gray-400">
-  <div class="card-body">
-		<div class="text-4xl font-thin opacity-30 tabular-nums">03</div>
-    <h2 class="card-title">Use a simple model to structure feedback</h2>
-  </div>
-</div>
-<div class="card bg-base-100 shadow-sm bg-gray-50 border-1 border-gray-400">
-  <div class="card-body">
-		<div class="text-4xl font-thin opacity-30 tabular-nums">04</div>
-    <h2 class="card-title">Avoid common feedback mistakes</h2>
-  </div>
-</div>
-
-</div>
-
-
-
-	
- <!-- 
-	<div class="stats shadow">
-		<div class="stat">
-			<div class="stat-title">Total Page Views</div>
-			<div class="stat-value">89,400</div>
-			<div class="stat-desc">21% more than last month</div>
-		</div>
-	</div>-->
-
-	<!--<div class="join join-vertical bg-base-100">
-  		
-		<div class="collapse collapse-arrow join-item border-base-300 border">
-    		<input type="radio" name="my-accordion-4" checked="checked" />
-    		<div class="collapse-title font-semibold">How do I create an account?</div>
-    		<div class="collapse-content text-sm">Click the "Sign Up" button in the top right corner and follow the registration process.</div>
-		</div>
-  		
-		<div class="collapse collapse-arrow join-item border-base-300 border">
-    		<input type="radio" name="my-accordion-4" />
-			<div class="collapse-title font-semibold">I forgot my password. What should I do?</div>
-			<div class="collapse-content text-sm">Click on "Forgot Password" on the login page and follow the instructions sent to your email.</div>
-		</div>
-			
-		<div class="collapse collapse-arrow join-item border-base-300 border">
-			<input type="radio" name="my-accordion-4" />
-			<div class="collapse-title font-semibold">How do I update my profile information?</div>
-			<div class="collapse-content text-sm">Go to "My Account" settings and select "Edit Profile" to make changes.</div>
-		</div>
-	</div>-->
-
-<CourseNav nextHref="/lesson1" nextLabel="Lesson 1" />
-
- </main>
+<Layout>
+	<Hero />
+	<div class="collections">
+		{ranges.map((range) => (
+			<ProductSection
+				id={range.id}
+				title={range.title}
+				description={range.description}
+				products={products.filter((product) => product.range === range.title)}
+			/>
+		))}
+	</div>
 </Layout>
