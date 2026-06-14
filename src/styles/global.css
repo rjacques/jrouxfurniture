@@ -354,6 +354,8 @@ h1 {
 		object-fit: cover;
 		object-position: 62% center;
 		opacity: 1;
+		-webkit-mask-image: linear-gradient(to bottom, transparent, #000 22%);
+		mask-image: linear-gradient(to bottom, transparent, #000 22%);
 	}
 
 	.hero__content {
