@@ -1,0 +1,57 @@
+---
+import Layout from '../layouts/main.astro';
+
+const updates = [
+	{
+		title: 'Essential Coffee Table first look',
+		date: 'Coming soon',
+		description: 'A short shop update showing the proportions, edge detail, and timber options.',
+		videoSrc: '',
+	},
+	{
+		title: 'Lift Pedestal in progress',
+		date: 'Coming soon',
+		description: 'A quick process clip from machining through final finishing.',
+		videoSrc: '',
+	},
+	{
+		title: 'Ground Coffee Table detail',
+		date: 'Coming soon',
+		description: 'A closer look at the heavier Ground profile and surface finish.',
+		videoSrc: '',
+	},
+];
+---
+
+<Layout title="News | Vrede" description="Short product update videos from Vrede.">
+	<section class="page-hero shell">
+		<p class="eyebrow">News</p>
+		<h1>Product updates from the workshop</h1>
+		<p>
+			Short videos showing new pieces, details, finishes, and work in progress.
+		</p>
+	</section>
+
+	<section class="news-grid shell" aria-label="Product update videos">
+		{updates.map((update) => (
+			<article class="news-card">
+				<div class="news-card__media">
+					{update.videoSrc ? (
+						<video controls preload="metadata" playsinline>
+							<source src={update.videoSrc} type="video/mp4" />
+						</video>
+					) : (
+						<div class="news-card__placeholder">
+							<span>Video coming soon</span>
+						</div>
+					)}
+				</div>
+				<div class="news-card__body">
+					<p class="news-card__date">{update.date}</p>
+					<h2>{update.title}</h2>
+					<p>{update.description}</p>
+				</div>
+			</article>
+		))}
+	</section>
+</Layout>
